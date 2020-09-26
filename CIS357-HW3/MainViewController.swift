@@ -33,12 +33,11 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
         //keyboard disapears when return key hit
         self.topTextField.delegate = self
         self.bottomTextField.delegate = self
         
+        //sets labels and place holder texts accordingly
         if let hasTopLabel = self.topLabelPass {
             self.topLabel.text = hasTopLabel
             self.topTextField.placeholder = "Enter value in \(self.topLabel.text!)"
@@ -49,6 +48,7 @@ class MainViewController: UIViewController {
             self.bottomTextField.placeholder = "Enter value in \(self.bottomLabel.text!)"
         }
         
+        //sets the mode which in turn also changes the title
         if let theMode = self.modePass {
             mode = theMode
         }
@@ -64,7 +64,6 @@ class MainViewController: UIViewController {
     func loadData() {
         self.reloadInputViews()
     }
-    
     
     //sending data over to the settings view controller
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -125,7 +124,6 @@ class MainViewController: UIViewController {
             bottomTextField.text = nil
             topTextField.placeholder = "Enter value in \(topLabel.text!)"
             bottomTextField.placeholder = "Enter value in \(bottomLabel.text!)"
-            
             self.view.endEditing(true)
             
         }

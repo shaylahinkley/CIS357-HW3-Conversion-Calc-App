@@ -35,6 +35,9 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //setting title to settings
+        self.title = "Settings"
+        
         
         if let hasFromUnitLabel = self.fromUnitLabelPass {
             self.settingsFromUnit.text = hasFromUnitLabel
@@ -48,6 +51,7 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         }
         
         self.pickerOptions()
+        
         //connecting data to picker
         self.picker.delegate = self
         self.picker.dataSource = self
@@ -63,9 +67,6 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         let toUnitTapped = UITapGestureRecognizer(target: self, action: #selector(SettingsViewController.tapToUnits))
                     settingsToUnit.isUserInteractionEnabled = true
                     settingsToUnit.addGestureRecognizer(toUnitTapped)
-        print("This is mode \(mode)")
-        print("This is the top label \(settingsFromUnit.text)")
-        print("This is the bottom label \(settingsToUnit.text)")
         self.loadData()
     }
     
@@ -83,13 +84,11 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     
     //action items for the tapping on different labels
    @IBAction func tapFromUnits(sender: UITapGestureRecognizer){
-        print("tap working")
         self.picker.isHidden = false
         whichOne(fromOrToStr: "fromUnits")
         
    }
     @IBAction func tapToUnits(sender: UITapGestureRecognizer) {
-        print("tap working")
         self.picker.isHidden = false
         whichOne(fromOrToStr: "toUnits")
     }
@@ -120,6 +119,7 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         }
     }
     
+    //dismiss when cancel button is pressed
     @IBAction func cancelButtonPressed(_ sender: UIBarButtonItem) {
         self.dismiss(animated: false, completion: nil)
     }
@@ -145,6 +145,7 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         return pickerData[row]
     }
     
+    //sets the rows of the picker view accordingly
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if fromOrTo == "fromUnits" {
             settingsFromUnit.text = pickerData[row]
