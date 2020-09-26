@@ -9,12 +9,21 @@
 /* Begin PBXBuildFile section */
 		2C2C53A3251F052E009AE121 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2C53A2251F052E009AE121 /* AppDelegate.swift */; };
 		2C2C53A5251F052E009AE121 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2C53A4251F052E009AE121 /* SceneDelegate.swift */; };
-		2C2C53A7251F052E009AE121 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2C53A6251F052E009AE121 /* ViewController.swift */; };
+		2C2C53A7251F052E009AE121 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2C53A6251F052E009AE121 /* MainViewController.swift */; };
 		2C2C53AA251F052E009AE121 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C2C53A8251F052E009AE121 /* Main.storyboard */; };
 		2C2C53AC251F052F009AE121 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C2C53AB251F052F009AE121 /* Assets.xcassets */; };
 		2C2C53AF251F052F009AE121 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C2C53AD251F052F009AE121 /* LaunchScreen.storyboard */; };
 		2C2C53BA251F052F009AE121 /* CIS357_HW3Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2C53B9251F052F009AE121 /* CIS357_HW3Tests.swift */; };
 		2C2C53C5251F052F009AE121 /* CIS357_HW3UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2C53C4251F052F009AE121 /* CIS357_HW3UITests.swift */; };
+		2C2C53E1251F0B86009AE121 /* DecimalMinusTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2C53E0251F0B86009AE121 /* DecimalMinusTextField.swift */; };
+		2C2C53E2251F0B86009AE121 /* DecimalMinusTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2C53E0251F0B86009AE121 /* DecimalMinusTextField.swift */; };
+		2C2C53E3251F0B86009AE121 /* DecimalMinusTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2C53E0251F0B86009AE121 /* DecimalMinusTextField.swift */; };
+		2C2C53E5251F0F51009AE121 /* UnitsAndModes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2C53E4251F0F51009AE121 /* UnitsAndModes.swift */; };
+		2C2C53E6251F0F51009AE121 /* UnitsAndModes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2C53E4251F0F51009AE121 /* UnitsAndModes.swift */; };
+		2C2C53E7251F0F51009AE121 /* UnitsAndModes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2C53E4251F0F51009AE121 /* UnitsAndModes.swift */; };
+		2C2C53E9251F1A92009AE121 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2C53E8251F1A92009AE121 /* SettingsViewController.swift */; };
+		2C2C53EA251F1A92009AE121 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2C53E8251F1A92009AE121 /* SettingsViewController.swift */; };
+		2C2C53EB251F1A92009AE121 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2C53E8251F1A92009AE121 /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +47,7 @@
 		2C2C539F251F052E009AE121 /* CIS357-HW3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CIS357-HW3.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C2C53A2251F052E009AE121 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C2C53A4251F052E009AE121 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2C2C53A6251F052E009AE121 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2C2C53A6251F052E009AE121 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		2C2C53A9251F052E009AE121 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2C2C53AB251F052F009AE121 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2C2C53AE251F052F009AE121 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +58,9 @@
 		2C2C53C0251F052F009AE121 /* CIS357-HW3UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CIS357-HW3UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C2C53C4251F052F009AE121 /* CIS357_HW3UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIS357_HW3UITests.swift; sourceTree = "<group>"; };
 		2C2C53C6251F052F009AE121 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2C2C53E0251F0B86009AE121 /* DecimalMinusTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DecimalMinusTextField.swift; path = ../../../Documents/DecimalMinusTextField/DecimalMinusTextField.swift; sourceTree = "<group>"; };
+		2C2C53E4251F0F51009AE121 /* UnitsAndModes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitsAndModes.swift; sourceTree = "<group>"; };
+		2C2C53E8251F1A92009AE121 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +111,16 @@
 		2C2C53A1251F052E009AE121 /* CIS357-HW3 */ = {
 			isa = PBXGroup;
 			children = (
+				2C2C53E4251F0F51009AE121 /* UnitsAndModes.swift */,
+				2C2C53E0251F0B86009AE121 /* DecimalMinusTextField.swift */,
 				2C2C53A2251F052E009AE121 /* AppDelegate.swift */,
 				2C2C53A4251F052E009AE121 /* SceneDelegate.swift */,
-				2C2C53A6251F052E009AE121 /* ViewController.swift */,
+				2C2C53A6251F052E009AE121 /* MainViewController.swift */,
 				2C2C53A8251F052E009AE121 /* Main.storyboard */,
 				2C2C53AB251F052F009AE121 /* Assets.xcassets */,
 				2C2C53AD251F052F009AE121 /* LaunchScreen.storyboard */,
 				2C2C53B0251F052F009AE121 /* Info.plist */,
+				2C2C53E8251F1A92009AE121 /* SettingsViewController.swift */,
 			);
 			path = "CIS357-HW3";
 			sourceTree = "<group>";
@@ -259,9 +274,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C2C53A7251F052E009AE121 /* ViewController.swift in Sources */,
+				2C2C53A7251F052E009AE121 /* MainViewController.swift in Sources */,
 				2C2C53A3251F052E009AE121 /* AppDelegate.swift in Sources */,
+				2C2C53E5251F0F51009AE121 /* UnitsAndModes.swift in Sources */,
+				2C2C53E1251F0B86009AE121 /* DecimalMinusTextField.swift in Sources */,
 				2C2C53A5251F052E009AE121 /* SceneDelegate.swift in Sources */,
+				2C2C53E9251F1A92009AE121 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,7 +287,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C2C53E6251F0F51009AE121 /* UnitsAndModes.swift in Sources */,
+				2C2C53E2251F0B86009AE121 /* DecimalMinusTextField.swift in Sources */,
 				2C2C53BA251F052F009AE121 /* CIS357_HW3Tests.swift in Sources */,
+				2C2C53EA251F1A92009AE121 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,7 +298,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C2C53E7251F0F51009AE121 /* UnitsAndModes.swift in Sources */,
+				2C2C53E3251F0B86009AE121 /* DecimalMinusTextField.swift in Sources */,
 				2C2C53C5251F052F009AE121 /* CIS357_HW3UITests.swift in Sources */,
+				2C2C53EB251F1A92009AE121 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
