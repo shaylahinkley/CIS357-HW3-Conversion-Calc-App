@@ -27,7 +27,7 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     var passToMainMode: String!
     var passTitle: String!
     
-    var mode: String! = "length"
+    var mode: String = ""
     
     //String that tells picker which label was touched
     var fromOrTo: String = ""
@@ -35,12 +35,6 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //connecting data to picker
-        self.picker.delegate = self
-        self.picker.dataSource = self
-        
-        //start with picker hidden
-        self.picker.isHidden = true
         
         if let hasFromUnitLabel = self.fromUnitLabelPass {
             self.settingsFromUnit.text = hasFromUnitLabel
@@ -49,26 +43,18 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         if let hasToUnitLabel = self.toUnitLabelPass {
             self.settingsToUnit.text = hasToUnitLabel
         }
-        
-        if let hasMode = self.modePass {
-            mode = hasMode
-            if mode == "length" {
-                pickerData = ["Yards", "Meters", "Miles"]
-            } else {
-                pickerData = ["Gallons", "Quarts", "Liters"]
-            }
-        } else {
-            pickerData = ["Yards", "Meters", "Miles"]
+        if let mode = self.modePass {
+            self.mode =  mode
         }
         
+        self.pickerOptions()
+        //connecting data to picker
+        self.picker.delegate = self
+        self.picker.dataSource = self
+              
+        //start with picker hidden
+        self.picker.isHidden = true
         
-//        //picking what does in picker based on mode
-//        if mode == "length" {
-//            pickerData = ["Yards", "Meters", "Miles"]
-//        } else {
-//            pickerData = ["Gallons", "Quarts", "Liters"]
-//        }
-
         //setting up tapping feature on the UILabels
         let fromUnitTapped = UITapGestureRecognizer(target: self, action: #selector(SettingsViewController.tapFromUnits))
              settingsFromUnit.isUserInteractionEnabled = true
@@ -77,8 +63,18 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         let toUnitTapped = UITapGestureRecognizer(target: self, action: #selector(SettingsViewController.tapToUnits))
                     settingsToUnit.isUserInteractionEnabled = true
                     settingsToUnit.addGestureRecognizer(toUnitTapped)
-        
+        print("This is mode \(mode)")
+        print("This is the top label \(settingsFromUnit.text)")
+        print("This is the bottom label \(settingsToUnit.text)")
         self.loadData()
+    }
+    
+   func pickerOptions() {
+    if self.mode == "length" {
+            pickerData = ["Yards", "Meters", "Miles"]
+        } else {
+            pickerData = ["Gallons", "Quarts", "Liters"]
+        }
     }
     
     func loadData() {
@@ -115,9 +111,8 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         if let bringBackBottomLabel = settingsToUnit.text {
             passtoMainBottomLabel = bringBackBottomLabel
         }
-        if let bringBackMode = mode {
-            passToMainMode = bringBackMode
-        }
+        passToMainMode = mode
+        
         if mode == "length" {
             passTitle = "Length Conversion Calculator"
         } else {

@@ -28,16 +28,12 @@ class MainViewController: UIViewController {
     var modePass: String?
     
     //variable for the mode that the 
-    var mode: String = "length"
+    var mode: String! = "length"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if modePass == nil {
-            whatMode(input: mode)
-        } else {
-            whatMode(input: modePass!)
-        }
+        
         
         //keyboard disapears when return key hit
         self.topTextField.delegate = self
@@ -45,10 +41,22 @@ class MainViewController: UIViewController {
         
         if let hasTopLabel = self.topLabelPass {
             self.topLabel.text = hasTopLabel
+            self.topTextField.placeholder = "Enter value in \(self.topLabel.text!)"
         }
         
         if let hasBottomLabel = self.bottomLabelPass {
-                   self.bottomLabel.text = hasBottomLabel
+            self.bottomLabel.text = hasBottomLabel
+            self.bottomTextField.placeholder = "Enter value in \(self.bottomLabel.text!)"
+        }
+        
+        if let theMode = self.modePass {
+            mode = theMode
+        }
+        
+        if mode == "length" {
+            titleAppLabel.text = "Length Conversion Calculator"
+        } else {
+            titleAppLabel.text = "Volume Conversion Calculator"
         }
         self.loadData()
         
@@ -57,38 +65,15 @@ class MainViewController: UIViewController {
         self.reloadInputViews()
     }
     
-    func whatMode(input: String) {
-        mode = input
-        
-        if mode == "length" {
-            titleAppLabel.text = "Length Conversion Calculator"
-        } else {
-            titleAppLabel.text = "Volume Conversion Calculator"
-        }
-    }
     
     //sending data over to the settings view controller
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "segueToSettings" {
-//            if let dest = segue.destination as? SettingsViewController {
-//                dest.fromUnitLabelPass = topLabel.text
-//                dest.toUnitLabelPass = bottomLabel.text
-//                dest.modePass = mode
-//            }
-            
-            if let bringBackTopLabel = topLabel.text {
-                passTopLabel = bringBackTopLabel
+            if let dest = segue.destination.children[0] as? SettingsViewController {
+                dest.fromUnitLabelPass = topLabel.text
+                dest.toUnitLabelPass = bottomLabel.text
+                dest.modePass = mode
             }
-            if let bringBackBottomLabel = bottomLabel.text {
-                passBottomLabel = bringBackBottomLabel
-            }
-            
-            if mode == "length"{
-                passMode = "length"
-            } else {
-                passMode = "volume"
-            }
-            
         }
     }
     
@@ -100,6 +85,8 @@ class MainViewController: UIViewController {
                 bottomLabel.text = senderVC.passtoMainBottomLabel
                 modePass = senderVC.passToMainMode
                 titleAppLabel.text = senderVC.passTitle
+                topTextField.placeholder = "Enter value in \(senderVC.passToMainTopLabel!)"
+                bottomTextField.placeholder = "Enter value in \(senderVC.passtoMainBottomLabel!)"
             }
         }
     }
@@ -125,6 +112,8 @@ class MainViewController: UIViewController {
             mode = "volume"
             topTextField.text = nil
             bottomTextField.text = nil
+            topTextField.placeholder = "Enter value in \(topLabel.text!)"
+            bottomTextField.placeholder = "Enter value in \(bottomLabel.text!)"
             self.view.endEditing(true)
             
         } else {
@@ -134,6 +123,9 @@ class MainViewController: UIViewController {
             mode = "length"
             topTextField.text = nil
             bottomTextField.text = nil
+            topTextField.placeholder = "Enter value in \(topLabel.text!)"
+            bottomTextField.placeholder = "Enter value in \(bottomLabel.text!)"
+            
             self.view.endEditing(true)
             
         }
@@ -146,10 +138,9 @@ class MainViewController: UIViewController {
     //when the calculate button is pressed
     @IBAction func calculateButtonPressed(_ sender: UIButton) {
         if topTextField.text! != "" {
-            self.bottomTextField.text! = calculation(fromUnit: topLabel.text!, toUnit: bottomLabel.text!, input: topTextField.text!)
-        }
-        if bottomTextField.text! != "" {
-            self.topTextField.text! = calculation(fromUnit: topLabel.text!, toUnit: bottomLabel.text!, input: bottomTextField.text!)
+            self.bottomTextField.text! = calculation(fromUnit: topLabel.text!, toUnit: bottomLabel.text!, input: self.topTextField.text!)
+        } else {
+            self.topTextField.text! = calculation(fromUnit: bottomLabel.text!, toUnit: topLabel.text!, input: bottomTextField.text!)
         }
          self.view.endEditing(true)
     
